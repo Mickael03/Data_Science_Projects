@@ -1,0 +1,5 @@
+# Ignorar diretórios com todos os dados
+/Dados/
+
+# Ignorar diretórios com pontos do notebook
+/.ipynb_checkpoints/
