@@ -14,7 +14,9 @@ Repositório com projetos de ciências de dados e pequenos exercícios de progra
 
 [![numpy](https://img.shields.io/badge/Numpy-2.1.2-<COLOR>.svg?logo=numpy)](https://numpy.org/)
 \
-[![pandas](https://img.shields.io/badge/Pandas-2.2.3-<COLOR>.svg?logo=pandas)](https://pandas.pydata.org/)
+[![pandas](https://img.shields.io/badge/Pandas-2.2.3-blue.svg?logo=pandas)](https://pandas.pydata.org/)
+\
+[![scikit-learn](https://img.shields.io/badge/Scikit_learn-1.5.2-blue.svg?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/stable/)
 \
 [![Jupyter Notebook](https://img.shields.io/badge/Made_With-Jupyter_Notebook-orange?style=pill&logo=Jupyter)](https://jupyter.org/)
 
