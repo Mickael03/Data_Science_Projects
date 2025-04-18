@@ -1,5 +1,5 @@
-# Ignorar diretórios com todos os dados
+# Dados brutos
 /Dados/
 
-# Ignorar diretórios com pontos do notebook
+# Pontos do jupyter notebbok
 /.ipynb_checkpoints/
