@@ -10,7 +10,7 @@ Repositório com projetos de ciências de dados e pequenos exercícios de progra
 
 [![VS code](https://img.shields.io/badge/Visual_Studio_Code-2.2.3-blue.svg)](https://code.visualstudio.com/)
 
-## Bibliocas
+## Bibliotecas
 
 [![numpy](https://img.shields.io/badge/Numpy-2.1.2-<COLOR>.svg?logo=numpy)](https://numpy.org/)
 \
