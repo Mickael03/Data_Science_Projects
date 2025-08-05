@@ -1,6 +1,12 @@
 # Dados brutos
-/Dados/
+/Dados
 
-# Pontos do jupyter notebbok
-/.ipynb_checkpoints/
-/MiniProjects/.ipynb_checkpoints/
+# Pontos do jupyter notebook
+/.ipynb_checkpoints
+/MiniProjects/.ipynb_checkpoints
+
+# Pasta de Machine Learning
+/Machine_Learning/Dados             # Dados brutos
+/Machine_Learning/ambiente          # Configurações do ambiente
+/Machine_Learning/.python-version   # Controle de versão do python
+/Machine_Learning/Machine Learinng  # Livro texto
