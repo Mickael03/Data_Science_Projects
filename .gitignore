@@ -1,12 +1,8 @@
-# Dados brutos
-/Dados
+# Pastas não rastreadas
+Dados/                  # Dados brutos
+ambientes/              # Ambientes virtuais
+ipynb_checkpoints/      # Checkpoints do Jupyter
 
-# Pontos do jupyter notebook
-/.ipynb_checkpoints
-/MiniProjects/.ipynb_checkpoints
-
-# Pasta de Machine Learning
-/Machine_Learning/Dados             # Dados brutos
-/Machine_Learning/ambiente          # Configurações do ambiente
-/Machine_Learning/.python-version   # Controle de versão do python
-/Machine_Learning/Machine Learinng  # Livro texto
+# Arquivos
+/Machine_Learning/.python-version      # Controle de versão do python
+/Machine_Learning/Machine Learning.pdf # Livro texto
