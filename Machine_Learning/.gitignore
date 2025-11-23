@@ -1,0 +1,5 @@
+# Pasta não rastreada
+ambiente/         # Ambiente virtual
+
+# Arquivo não rastreado
+.python-version  # Versão do Python
