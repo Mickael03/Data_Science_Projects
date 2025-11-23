@@ -1,6 +1,3 @@
-# Dados brutos
-/Dados/
-
-# Pontos do jupyter notebbok
-/.ipynb_checkpoints/
-/MiniProjects/.ipynb_checkpoints/
+# Pastas
+/Machine_Learning           # Diretório para livro de Machine Learning
+/MiniProjects               # Projetos menores e experimentais
