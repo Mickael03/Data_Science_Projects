@@ -6,3 +6,4 @@ ipynb_checkpoints/      # Checkpoints do Jupyter
 # Arquivos
 /Machine_Learning/.python-version      # Controle de versão do python
 /Machine_Learning/Machine Learning.pdf # Livro texto
+/Machine_Learning/Slides.pdf           # Slides do curso 
