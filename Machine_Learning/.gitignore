@@ -1,5 +1,7 @@
 # Pasta não rastreada
-ambiente/         # Ambiente virtual
+ambiente/                   # Ambiente virtual
+.ipynb_checkpoints/         # Arquivos temporários do Jupyter Notebook
+dados/                      # Pasta de dados
 
 # Arquivo não rastreado
 .python-version  # Versão do Python
