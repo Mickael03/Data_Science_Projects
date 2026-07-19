@@ -1,6 +1,13 @@
-from Spline import SplineCubica
+# 1 - Bibliotecas Padrões
 import unittest
 
+# 2 - Bibliotecas de Terceiros
+
+# 3 - Bibliotecas Próprias
+import sistema_equacoes
+from spline import SplineCubica
+
+# Testa a classe SplineCubica com a condição natural e fixada
 class TestNatural(unittest.TestCase):
 
     def test_DoisPontos(self):
@@ -141,5 +148,74 @@ class TestFixados(unittest.TestCase):
                 self.assertEqual(len(spline.coeficientes[i]), len(esperado[i]), f"Números de coeficientes na linha {i} são diferentes")
                 for j in range(len(esperado[i])):
                     self.assertAlmostEqual(spline.coeficientes[i][j], esperado[i][j], places=7, msg=f"Divergência no coeficiente [{i}][{j}]")
+
+# Testa a função que solucionar o sistema linear Ax=b pelo método de eliminação de Gauss
+class TestSistemaEquacoes(unittest.TestCase):
+
+    def test_sistema_duas_equacoes(self):
+        with self.subTest(msg = 'Sistema de 2 equações com 2 incógnitas, sub teste 1'):
+            A = [[2, 1], [3, 7]]
+            b = [11, 0]
+            esperado = [7, -3]
+            resultado = sistema_equacoes.resolver_gauss(A, b)
+            self.assertEqual(len(resultado), len(esperado), "Número de linhas com os resultados são diferente")
+            for i in range(len(esperado)):
+                self.assertAlmostEqual(resultado[i], esperado[i], places=7,msg=f"Divergência no resultado [{i}]")
+        
+        with self.subTest(msg = 'Sistema de 2 equações com 2 incógnitas, sub teste 2'):
+            A = [[7, 2], [8, 2]]
+            b = [24, 30]
+            esperado = [6,-9]
+            resultado = sistema_equacoes.resolver_gauss(A, b)
+            self.assertEqual(len(resultado), len(esperado), "Número de linhas com os resultados são diferente")
+            for i in range(len(esperado)):
+                self.assertAlmostEqual(resultado[i], esperado[i], places=7,msg=f"Divergência no resultado [{i}]")
+
+    def test_sistema_tres_equacoes(self):
+        with self.subTest(msg = 'Sistema de 3 equações com 3 incógnitas, sub teste 1'):
+            A = [[2, 3, 5], [3, 2, -5], [5, -3, 2]]
+            b = [0, 5, 0]
+            esperado = [0.5, 0.5, -0.5]
+            resultado = sistema_equacoes.resolver_gauss(A, b)
+            self.assertEqual(len(resultado), len(esperado), "Número de linhas com os resultados são diferente")
+            for i in range(len(esperado)):
+                self.assertAlmostEqual(resultado[i], esperado[i], places=7,msg=f"Divergência no resultado [{i}]")
+
+    def test_sistema_quatro_equacoes(self):
+        with self.subTest(msg = 'Sistema de 4 equações com 4 incógnitas, sub teste 1'):
+            A = [[0, 2, 9, 5], [0, 0, 7, 4], [0, 8, 0, 3], [9, 8, 8, 3]]
+            b = [16, 11, 11, 28]
+            esperado = [1, 1, 1, 1]
+            resultado = sistema_equacoes.resolver_gauss(A, b)
+            self.assertEqual(len(resultado), len(esperado), "Número de linhas com os resultados são diferente")
+            for i in range(len(esperado)):
+                self.assertAlmostEqual(resultado[i], esperado[i], places=7,msg=f"Divergência no resultado [{i}]")
+
+# Verificar os erros na função resolver_gauss
+class TestValidarMatriz(unittest.TestCase):
+
+    def test_matriz_vazias(self):
+        with self.assertRaises(ValueError) as contexto:
+            sistema_equacoes.resolver_gauss([], [])
+        self.assertIn("Entrada inválida: Uma das matrizes ou ambas são vazias", str(contexto.exception))
+
+    def test_dimensoes_diferentes(self):
+        A = [[1, 2], [3, 4]]
+        b = [1, 2, 3]  # tamanho diferente
+        with self.assertRaises(ValueError) as contexto:
+            sistema_equacoes.resolver_gauss(A, b)
+        self.assertIn("Número de equações", str(contexto.exception))
+
+    def test_matriz_nao_quadrada(self):
+        A = [[1, 2, 3], [4, 5, 6]]  # 2x3
+        b = [1, 2]  # tamanho 2
+        with self.assertRaises(ValueError) as contexto:
+            sistema_equacoes.resolver_gauss(A, b)
+        self.assertIn("A matriz não é quadrada (N x N)", str(contexto.exception))
+
+    def test_matriz_valida(self):
+        A = [[1, 2], [3, 4]]
+        b = [5, 6]
+        self.assertTrue(sistema_equacoes.resolver_gauss(A, b))
 
 unittest.main()
