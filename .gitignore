@@ -1,4 +1,5 @@
-# Pastas não rastreadas
-dados/                  # Dados brutos
-ambientes/              # Ambientes virtuais
-ipynb_checkpoints/      # Checkpoints do Jupyter
+# Diretórios a serem ignorados
+__pycache__/                                 # Arquivos compilados do Python
+.ipynb_checkpoints/                          # Arquivos temporários do Jupyter Notebook
+Machine_Learning/dados/                      # Pasta de dados e arquivos brutos
+Machine_Learning/ambiente/                   # Ambiente virtual local

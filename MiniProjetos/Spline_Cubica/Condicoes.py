@@ -1,20 +1,16 @@
-def condicao_um (x = []):
-    '''
+def condicao_um (x:list)->list[list]:
+    """
     Gera os coeficientes da primeira condição para determinar as subfunções da spline.
-    
     Parâmetros:
         x (list): Lista das abscissas dos pontos para determinar a spline.
-      
     Retorna:
         list: Uma lista de listas, onde cada sublista contém os coeficientes para montar a matriz de solução do sistema.
-    '''
-    # Numeros de equações
-    quantidade_de_equacoes = len(x) - 1
+    """
+    
+    quantidade_de_equacoes = len(x) - 1 # Numeros de equações
+    coeficientes = []                   # Coeficientes
 
-    # Coeficientes
-    coeficientes = []
-
-    #Gerar os coeficientes de cada subfunção da função por parte
+    # Gerar os coeficientes de cada subfunção da função por parte
     j = 0
     for _ in range(quantidade_de_equacoes):
         k = [0 for _ in range(4*quantidade_de_equacoes)]
@@ -24,23 +20,19 @@ def condicao_um (x = []):
         
     return coeficientes
 
-def condicao_dois(x = []):
-    '''
+def condicao_dois(x:list)->list[list]:
+    """
     Gera os coeficientes da segunda condição para determinar as subfunções da spline.
-    
     Parâmetros:
         x (list): Lista das abscissas dos pontos para determinar a spline.
-      
     Retorna:
         list: Uma lista de listas, onde cada sublista contém os coeficientes para montar a matriz de solução do sistema.
-    '''
-    # Numeros de equações
-    quantidade_de_equacoes = len(x) - 1
-
-    # Coeficientes
-    coeficientes = []
+    """
     
-    #Gerar os coeficientes de cada subfunção da função por parte
+    quantidade_de_equacoes = len(x) - 1     # Numeros de equações
+    coeficientes = []                       # Coeficientes
+    
+    # Gerar os coeficientes de cada subfunção da função por parte
     i,j = 0,0
     for _ in range(quantidade_de_equacoes):
         k = [0 for elemento in range(4*quantidade_de_equacoes)]
@@ -54,21 +46,17 @@ def condicao_dois(x = []):
 
     return coeficientes
 
-def condicao_tres(x = []):
-    '''
+def condicao_tres(x:list)->list[list]:
+    """
     Gera os coeficientes da terceira condição para determinar as subfunções da spline.
-    
     Parâmetros:
         x (list): Lista das abscissas dos pontos para determinar a spline.
-      
     Retorna:
         list: Uma lista de listas, onde cada sublista contém os coeficientes para montar a matriz de solução do sistema.
-    '''
-    # Numeros de equações
-    quantidade_de_equacoes = len(x) - 1
-
-    # Coeficientes
-    coeficientes = []
+    """
+    
+    quantidade_de_equacoes = len(x) - 1 # Numeros de equações
+    coeficientes = []                   # Coeficientes
 
     # Gerar os coeficientes de cada uma das primeira derivadas das subfunção da função por parte
     i,j = 0, 0
@@ -85,21 +73,17 @@ def condicao_tres(x = []):
 
     return coeficientes
 
-def condicao_quatro(x = []):
-    '''
+def condicao_quatro(x:list)->list[list]:
+    """
     Gera os coeficientes da quarta condição para determinar as subfunções da spline.
-    
     Parâmetros:
         x (list): Lista das abscissas dos pontos para determinar a spline.
-      
     Retorna:
         list: Uma lista de listas, onde cada sublista contém os coeficientes para montar a matriz de solução do sistema.
-    '''
-    # Numeros de equações
-    quantidade_de_equacoes = len(x) - 1
-
-    # Coeficientes
-    coeficientes = []
+    """
+    
+    quantidade_de_equacoes = len(x) - 1 # Numeros de equações
+    coeficientes = []                   # Coeficientes
 
     # Gerar os coeficientes de cada uma das primeira derivadas das subfunção da função por parte
     i,j = 0,0
@@ -115,22 +99,18 @@ def condicao_quatro(x = []):
         
     return coeficientes
 
-def condicao_cinco(x = [], condicao = 'natural'):
-    '''
+def condicao_cinco(x:list, condicao = 'natural')->list[list]:
+    """
     Gera os coeficientes da quinta condição para determinar as subfunções da spline.
-    
     Parâmetros:
         x (list): Lista das abscissas dos pontos para determinar a spline.
         condicao (str): Tipo de condição a se aplicada, fixada quando temos somente a primeira derivada e natural quando temos a segunda derivada.
-      
     Retorna:
         list: Uma lista de listas, onde cada sublista contém os coeficientes para montar a matriz de solução do sistema.
-    '''
-    # Número de equações 
-    quantidade_de_equacoes = len(x) - 1
-
-    # Lista com os coeficientes 
-    coeficientes = []
+    """
+ 
+    quantidade_de_equacoes = len(x) - 1 # Número de equações
+    coeficientes = []                   # Lista com os coeficientes 
 
     # Criar a lista com os coeficientes de  cada subfunção
     if condicao == 'fixado':

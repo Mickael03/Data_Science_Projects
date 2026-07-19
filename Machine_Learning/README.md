@@ -5,13 +5,15 @@ Contém os códigos do livro:
 Editora: Novatec, São Paulo.  
 Escrito: Matt Harrison
 
+[![Python](https://img.shields.io/badge/Python-3.11.1-blue.svg?logo=python&logoColor=ffdd54)](https://www.python.org/)
+
 # Guia Rápido de Configuração de Ambiente
 
 Este guia contém os comandos essenciais para configurar o ambiente Python. Usaremos o `pyenv` para gerenciar as versões do Python e o `venv` para criar ambientes virtuais isolados.
 
 ## [Pyenv](https://github.com/pyenv/pyenv)
 
-Ferramenta para controle de múltiplas versos do python.  
+Ferramenta para controle de múltiplas versões do python.  
 
 [![pyenv](https://avatars.githubusercontent.com/u/46895318?s=200&v=4)](https://github.com/pyenv-win/pyenv-win)  
 
@@ -43,13 +45,13 @@ Módulo para criar ambientes virtuais
 ``meu_ambiente\Scripts\activate`` (Windows)    
 ``source meu_ambiente/bin/activate`` (Linux/macOS)  
 
-> Instação dos pacotes:  
+> Instalação dos pacotes:  
 ``pip install pacotes``  
 
 > Criar arquivo com versões de pacotes  
 `pip freeze > requirements.txt`  
 
-> Instalações de pacotes a partir de uma arquivo  
+> Instalações de pacotes a partir de um arquivo  
 `pip install -r requirements.txt`  
 
 > Desativa o ambiente:  
