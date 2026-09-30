@@ -54,5 +54,8 @@ Módulo para criar ambientes virtuais
 > Instalações de pacotes a partir de um arquivo  
 `pip install -r requirements.txt`  
 
+> Desinstalação dos pacotes:  
+``pip uninstall -r requerements.txt -y``  
+
 > Desativa o ambiente:  
 `deactivate`
